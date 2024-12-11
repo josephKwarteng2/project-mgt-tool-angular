@@ -1,0 +1,101 @@
+<div [ngClass]="variant" class="input_container">
+  @if (label) {
+    <label [ngStyle]="{ 'font-weight': labelFontWeight || '400' }" for="{{id}}">
+      {{ label }}
+      @if (isRequired) {
+        <span class="required-asterisk">*</span>
+      }
+    </label>
+  }
+
+  <div class="input_icon_wrapper">
+    <img
+      (click)="onIconClick($event)"
+      (keyup.enter)="onIconClick($event)"
+      *ngIf="icon && iconPosition === 'start'"
+      [src]="icon"
+      alt="icon"
+      class="icon icon_start"
+      tabindex="0"
+    />
+    @if (!icon && iconPosition === 'start') {
+      <div class="icon icon_start">{{ prefixText }}</div>
+    }
+    <input
+      #dateInput
+      (blur)="onBlur($event)"
+      (click)="isDatePicker && showDatePickerToggle($event)"
+      (focus)="onFocus()"
+      (input)="isDatePicker ? onDateChange($event) : onInput($event)"
+      [attr.aria-label]="ariaLabel || label"
+      [attr.disabled]="isDisabled ? true : null"
+      [attr.readOnly]="isDatePicker ? true : null"
+      [class.error]="!inputValid"
+      [class.icon_padding]="(icon && iconPosition === 'start') || prefixText"
+      [formControl]="control"
+      [formControl]="formControl"
+      [id]="id"
+      [name]="name"
+      [ngStyle]="{
+        borderColor: error
+          ? 'red'
+          : isFocused()
+            ? focusBorderColor
+            : borderColor || '#D8DAE5',
+        borderWidth: borderThickness || '2px',
+        labelColor: labelColor || '#474d66',
+        placeholderTextWeight: placeholderTextWeight || '400',
+      }"
+      [placeholder]="placeholder"
+      [type]="isDatePicker ? 'text' : type"
+      [value]="value"
+    />
+    <img
+      (click)="onIconClick($event)"
+      (keyup.enter)="onIconClick($event)"
+      *ngIf="icon && iconPosition === 'end'"
+      [ngClass]="{ icon_rotated: isDropdownOpen() }"
+      [src]="icon"
+      alt="icon"
+      class="icon icon_end"
+      tabindex="0"
+    />
+    <img
+      (click)="onTogglePasswordVisibility()"
+      (keyup.enter)="onTogglePasswordVisibility()"
+      *ngIf="showVisibilityToggles"
+      [src]="
+        isFieldVisible()
+          ? 'assets/images/hide-password.svg'
+          : 'assets/images/show-password.svg'
+      "
+      alt="icon"
+      class="icon password_visibility"
+      tabindex="0"
+    />
+  </div>
+  @if (isDropdown && isDropdownOpen()) {
+    <ul class="dropdown">
+      <li
+        (click)="selectOption(option, $event)"
+        (keyup.enter)="selectOption(option, $event)"
+        *ngFor="let option of processedDropdownOptions"
+        [value]="option"
+        tabindex="0"
+      >
+        {{ option }}
+      </li>
+    </ul>
+  }
+
+  <input
+    #dateInput
+    (change)="onDateChange($event)"
+    *ngIf="isDatePicker && showDatePicker()"
+    [value]="value"
+    class="date-picker"
+    type="date"
+  />
+
+  <p class="error_message">{{ error }}</p>
+</div>

@@ -1,0 +1,137 @@
+$primary-color: #473bf0;
+$white: #fff;
+$text-color: #333;
+$border-radius: 10px;
+$spacing: 1.5rem;
+$img-size: 80px;
+
+.scroller {
+  max-width: 100%;
+  background: #F4F7FA;
+  height: 50vh;
+  padding: 5rem;
+  margin-top: 4rem;
+  @media only screen and (max-height: 700px) {
+    height: 80vh
+  }
+
+  &__inner {
+    padding-block: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10rem;
+  }
+
+  &[data-animated="true"] {
+    overflow: hidden;
+    -webkit-mask: linear-gradient(
+        90deg,
+        transparent,
+        white 20%,
+        white 80%,
+        transparent
+    );
+    mask: linear-gradient(90deg, transparent, white 20%, white 80%, transparent);
+  }
+
+  &[data-animated="true"] .scroller__inner {
+    width: max-content;
+    flex-wrap: nowrap;
+    animation: scroll var(--_animation-duration, 40s) var(--_animation-direction, forwards) linear infinite;
+  }
+
+  &[data-direction="right"] {
+    --_animation-direction: reverse;
+  }
+
+  &[data-direction="left"] {
+    --_animation-direction: forwards;
+  }
+
+  &[data-speed="fast"] {
+    --_animation-duration: 20s;
+  }
+
+  &[data-speed="slow"] {
+    --_animation-duration: 60s;
+  }
+
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+}
+
+.testimonial {
+  display: block;
+  padding: 1.5rem;
+  border-radius: $border-radius;
+  max-width: 600px;
+  width: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  gap: 1.5rem;
+
+  .testimonial_img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 3rem;
+
+    img {
+      width: $img-size;
+      height: $img-size;
+      border-radius: 50%;
+      border: 2px solid $primary-color;
+    }
+  }
+
+  .testimonial_text {
+    text-align: center;
+
+    h1 {
+      color: #161C2D;
+      font-size: 1.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      color: $text-color;
+      font-size: 1rem;
+      text-align: center;
+      //width: 50%;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    h2 {
+      padding-top: 1rem;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonial {
+    padding: 1rem;
+    max-width: 100%;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .testimonial_img {
+      margin-bottom: 1rem;
+    }
+
+    .testimonial_text {
+      h1 {
+        font-size: 1.25rem;
+      }
+
+      p {
+        font-size: 0.875rem;
+      }
+    }
+  }
+}

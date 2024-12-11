@@ -1,0 +1,69 @@
+$card-border-radius: 10px;
+$card-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+$card-padding: 1.5rem;
+$card-margin: 4rem;
+$card-background: #fff;
+$badge-background: #EDEBFD;
+$badge-color: #473BF0;
+$price-color: #333;
+$button-background: #007bff;
+$button-color: #fff;
+
+.card {
+  position: relative;
+  min-height: 110px;
+  max-height: 410px;
+  max-width: 320px;
+  width: 380px;
+  height: 380px;
+  transition: transform 0.3s ease,
+  box-shadow 0.3s ease;
+  border-radius: $card-border-radius;
+  box-shadow: $card-shadow;
+  background-color: $card-background;
+  overflow: hidden;
+
+
+  &__content {
+    padding: $card-padding;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .card__badge {
+      background-color: $badge-background;
+      color: $badge-color;
+      padding: 0.5rem 1rem;
+      border-radius: 50px;
+      top: 1rem;
+      right: 1rem;
+      font-family: 'Urbanist', sans-serif;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+
+    .card__description {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #555;
+      margin: 2rem 0;
+      text-align: center;
+    }
+
+    .card__price {
+      font-size: 3rem;
+      font-family: 'Urbanist', sans-serif;
+      color: $price-color;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+
+    .card__payment-type {
+      font-size: 1rem;
+      font-weight: 500;
+      color: #777;
+      margin: 0.5rem 0;
+    }
+  }
+}

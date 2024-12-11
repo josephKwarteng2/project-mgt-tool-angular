@@ -1,0 +1,151 @@
+@use "../../sass/breakpoints" as *;
+
+$primary-color: #473bf0;
+$secondary-color: #555;
+$background-color: #f9f9f9;
+$animation-duration: 1.5s;
+$clip-path-angle: 10deg;
+
+$gradient-start: #e9f2fe;
+$gradient-end: #e9f2fe;
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+main {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
+  padding: 3rem 2rem;
+  min-height: 80vh;
+  overflow: hidden;
+
+  .hero_text {
+    max-width: 40%;
+    text-align: center;
+    opacity: 0;
+    animation: fadeInUp 1s ease-in-out forwards;
+    //animation-delay: 0.5s;
+    @include max-lg {
+      max-width: 100%;
+    }
+    @media only screen and (max-height: 700px) {
+      max-width: 60%;
+    }
+
+    h1 {
+      font-size: 4rem;
+      font-weight: 900;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: #333;
+
+      animation: fadeInUp 1.5s ease-in-out forwards;
+
+      span {
+        color: $primary-color;
+      }
+
+      @include max-md {
+        font-size: 2rem;
+      }
+      @include md {
+        font-size: 4rem;
+      }
+    }
+
+    p {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+      text-align: center;
+      color: #555;
+
+      animation: fadeInUp 1.5s ease-in-out forwards;
+      //animation-delay: 0.3s;
+    }
+  }
+
+  .buttons_wrapper {
+    display: flex;
+    gap: 1.5rem;
+    opacity: 0;
+    animation: fadeInUp 1.8s ease-in-out forwards;
+    //animation-delay: 1s;
+
+    button {
+      padding: 0.75rem 1.5rem;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      //border: none;
+      border-radius: 10px;
+      color: #333;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background-color 0.3s,
+      color 0.3s;
+
+      &:hover {
+        background-color: #ccc;
+        color: #fff;
+      }
+    }
+  }
+
+  img {
+    width: 1500px;
+    height: 800px;
+    opacity: 0;
+    animation: fadeInUp 2s ease-in-out forwards;
+    margin-top: 4rem;
+    //animation-delay: 1.2s;
+    @include max-lg {
+      width: 800px;
+
+    }
+    @include max-md {
+      max-width: 100%;
+      margin-top: -11rem;
+      justify-content: center;
+    }
+
+  }
+
+  @include max-md {
+    flex-direction: column;
+    text-align: center;
+    padding: 2rem 1rem;
+
+    .hero_text {
+      max-width: 100%;
+    }
+
+    .buttons_wrapper {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+}

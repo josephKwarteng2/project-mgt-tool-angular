@@ -1,0 +1,113 @@
+.input_container {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .input_icon_wrapper {
+    display: flex;
+    align-items: center;
+    position: relative;
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      margin: 0 0.5rem;
+
+      &.icon_start {
+        margin-right: 0.5rem;
+      }
+
+      &.icon_end {
+        margin-left: 0.5rem;
+      }
+
+      &.password_visibility {
+        margin-left: 0.5rem;
+      }
+
+      &.icon_rotated {
+        transform: rotate(180deg);
+      }
+    }
+
+    input {
+      flex: 1;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      font-weight: 400;
+      border: 1px solid #E7E9ED;
+      border-radius: 0.5rem;
+      outline: none;
+      transition: border-color 0.2s ease-in-out;
+      box-sizing: border-box;
+
+      &:focus {
+        border-color: #0B76B7;
+      }
+
+      &.error {
+        border-color: red;
+      }
+
+      &.icon_padding {
+        padding-left: calc(1rem + 20px);
+      }
+    }
+  }
+
+  label {
+    font-size: 1rem;
+    color: #474d66;
+    margin-bottom: 0.5rem;
+    margin-left: 2.3rem;
+
+    .required-asterisk {
+      color: red;
+      margin-left: 0.25rem;
+    }
+  }
+
+  .error_message {
+    color: red;
+    font-size: 0.75rem;
+    margin-top: 0.5rem;
+    margin-left: 2.3rem;
+  }
+
+  .dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border: 1px solid #D8DAE5;
+    border-radius: 0.25rem;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    max-height: 150px;
+    overflow-y: auto;
+
+    li {
+      padding: 0.5rem 1rem;
+      cursor: pointer;
+      transition: background-color 0.2s ease-in-out;
+
+      &:hover {
+        background-color: #f0f0f0;
+      }
+    }
+  }
+
+  .date-picker {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border: 2px solid #D8DAE5;
+    border-radius: 0.25rem;
+    font-size: 1rem;
+  }
+}

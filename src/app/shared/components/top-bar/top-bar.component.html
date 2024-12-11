@@ -1,0 +1,75 @@
+<nav #navElement>
+  <div class="logo">
+    <h1 routerLink="/{{ landingPageRoute }}">Brainwave.io</h1>
+  </div>
+
+  <div #navLinks class="nav_links">
+    <ul>
+      <li
+        (mouseleave)="togglePopup('demosPopup', true)"
+        (mouseover)="togglePopup('demosPopup', false)"
+      >
+        Demos
+        <img alt="arrow down" src="assets/chevron_down.svg"/>
+        <div #demosPopup class="popup">
+          <a routerLink="">Demo 1</a>
+        </div>
+      </li>
+      <li
+        (mouseleave)="togglePopup('pagesPopup', true)"
+        (mouseover)="togglePopup('pagesPopup', false)"
+      >
+        Pages
+        <img alt="arrow down" src="assets/chevron_down.svg"/>
+        <div #pagesPopup class="popup">
+          <a routerLink="/{{ overViewRoute }}">
+            <img alt="dashboard" src="assets/category-2.svg"/>
+            Overview</a
+          >
+          <a routerLink="/{{ taskRoute }}">
+            <img alt="dashboard" src="assets/book.svg"/>
+            Task</a
+          >
+          <a routerLink="/{{ mentorsRoute }}">
+            <img alt="dashboard" src="assets/category-2.svg"/>
+            Mentors</a
+          >
+          <a routerLink="/{{ chatRoute }}">
+            <img alt="dashboard" src="assets/category-2.svg"/>
+            Chat</a
+          >
+          <a routerLink="/{{ settingsRoute }}">
+            <img alt="dashboard" src="assets/category-2.svg"/>
+            Settings</a
+          >
+        </div>
+      </li>
+      <li
+        (mouseleave)="togglePopup('supportPopup', true)"
+        (mouseover)="togglePopup('supportPopup', false)"
+      >
+        Support
+        <img alt="arrow down" src="assets/chevron_down.svg"/>
+        <div #supportPopup class="popup"></div>
+      </li>
+      <li>Contact <img alt="arrow down" src="assets/chevron_down.svg"/></li>
+    </ul>
+  </div>
+  <div #searchAndButtonWrapper class="search_and_button_wrapper">
+    <app-button
+      routerLink="/{{ loginRoute }}"
+      text="Get started for free"
+      variant="outlined"
+    ></app-button>
+    <img #searchIcon alt="search icon" src="assets/search.svg"/>
+  </div>
+  
+  <div #hamburger class="hamburger">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+  <div #searchWrapper class="search_input_wrapper">
+    <input placeholder="Search..." type="text"/>
+  </div>
+</nav>
