@@ -1,0 +1,72 @@
+@use "../../sass/breakpoints" as *;
+
+$primary-color: #473bf0;
+$secondary-color: #161c2d;
+$light-gray: #f7f7f7;
+
+.analytics {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 14.7rem;
+  perspective: 1000px;
+  border-bottom: 1px solid #e7e9ed;
+  @include max-lg {
+    padding: 0;
+  }
+  @include max-md {
+    flex-direction: column;
+    justify-content: center;
+    padding: 0;
+  }
+
+  @media only screen and (max-height: 700px) {
+    padding: 2rem;
+  }
+
+  .No_of_visitation,
+  .satisfaction_rate,
+  .rate {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    gap: 1rem;
+    // transition: transform 0.3s ease-in-out;
+
+    // &:hover {
+    //   transform: rotateY(10deg);
+    // }
+
+    @include max-lg {
+      flex-direction: row;
+    }
+
+    h1 {
+      font-size: 3rem;
+      font-weight: bold;
+      color: $secondary-color;
+      margin-bottom: 0.5rem;
+    }
+
+    p {
+      font-size: 1.125rem;
+      color: $secondary-color;
+      margin: 0;
+    }
+  }
+
+  // @media (max-width: 768px) {
+  //   flex-direction: column;
+  //   gap: 1.5rem;
+
+  //   .No_of_visitation,
+  //   .satisfaction_rate,
+  //   .rate {
+  //     width: 100%;
+  //   }
+  // }
+}

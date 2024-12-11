@@ -1,0 +1,22 @@
+<button
+  #btn
+  (click)="!disabled && clickEvent.emit()"
+  [ariaLabel]="ariaLabel ?? text"
+  [class.big]="size === 'big'"
+  [class.danger]="variant === 'danger'"
+  [class.disabled]="disabled"
+  [class.outlined]="variant === 'outlined'"
+  [class.plain]="variant === 'plain'"
+  [class.plain_outlined]="variant === 'plainOutlined'"
+  [class.xsmall]="size === 'xsmall'"
+  class="btn"
+>
+  <div class="text">
+    <span class="initial-text">{{ text }}</span>
+  </div>
+  @if (icon) {
+    <img [src]="icon" alt="icon" class="icon"/>
+  }
+  @if (isLoading) {
+  }
+</button>
