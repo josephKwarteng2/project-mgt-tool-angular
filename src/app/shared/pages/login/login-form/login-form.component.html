@@ -1,0 +1,27 @@
+<form (ngSubmit)="onLogin()" [formGroup]="_loginForm">
+  <h2>Login</h2>
+
+  <app-input
+    [error]="emailNotProvided()"
+    [isRequired]="true"
+    formControlName="email"
+    label="Email"
+    labelFontWeight="700"
+    placeholder="Email"
+    type="email">
+  </app-input>
+
+  <app-input
+    [error]="passwordNotProvided()"
+    [isRequired]="true"
+    formControlName="password"
+    label="Password"
+    labelFontWeight="700"
+    placeholder="Password"
+    type="password">
+  </app-input>
+  <div class="buttons_wrapper">
+    <app-button [disabled]="_loginForm.invalid" size="big" text="Login" type="submit" variant="outlined"/>
+  </div>
+
+</form>
