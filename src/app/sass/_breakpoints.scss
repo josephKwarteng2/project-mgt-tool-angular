@@ -1,0 +1,106 @@
+$breakpoints: (
+  "xs": 20.3125em,
+  // 325
+  "sm": 30em,
+  // 480
+  "md": 45em,
+  // 720
+  "lg": 60em,
+  // 960
+  "xl": 80em,
+  // 1280
+  "xlg": 90em,
+  // 1440
+  "xxxl": 119rem // 1920,,
+);
+
+@mixin xs {
+  @media (min-width: map-get($breakpoints, "xs")) {
+    @content;
+  }
+}
+@mixin sm {
+  @media (min-width: map-get($breakpoints, "sm")) {
+    @content;
+  }
+}
+@mixin md {
+  @media (min-width: map-get($breakpoints, "md")) {
+    @content;
+  }
+}
+@mixin lg {
+  @media (min-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+@mixin xl {
+  @media (min-width: map-get($breakpoints, "xl")) {
+    @content;
+  }
+}
+@mixin xlg {
+  @media (min-width: map-get($breakpoints, "xlg")) {
+    @content;
+  }
+}
+
+@mixin mid-lg {
+  @media (min-width: 960px) and (max-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin md-lg {
+  @media (min-width: calc(map-get($breakpoints, "md") + 1px)) and (max-width: map-get($breakpoints, "lg")) {
+    @content;
+  }
+}
+
+@mixin xxxl {
+  @media (min-width: 1919px) {
+    @content;
+  }
+}
+
+@mixin max-xs {
+  @media (max-width: calc(map-get($breakpoints, "xs") - 1px)) {
+    @content;
+  }
+}
+@mixin max-sm {
+  @media (max-width: calc(map-get($breakpoints, "sm") - 1px)) {
+    @content;
+  }
+}
+@mixin max-md {
+  @media (max-width: calc(map-get($breakpoints, "md") - 1px)) {
+    @content;
+  }
+}
+@mixin max-lg {
+  @media (max-width: calc(map-get($breakpoints, "lg") - 1px)) {
+    @content;
+  }
+}
+@mixin max-xl {
+  @media (max-width: calc(map-get($breakpoints, "xl") - 1px)) {
+    @content;
+  }
+}
+@mixin max-xlg {
+  @media (max-width: calc(map-get($breakpoints, "xlg") - 1px)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-max($bp: 0) {
+  @media (max-width: $bp) {
+    @content;
+  }
+}
+@mixin breakpoint-min($bp: 0) {
+  @media (min-width: $bp) {
+    @content;
+  }
+}

@@ -1,0 +1,49 @@
+@mixin gallery-padding($padding) {
+  padding-left: $padding;
+  padding-right: $padding;
+}
+
+@mixin image-styles($width, $height, $radius) {
+  width: $width;
+  height: $height;
+  border-radius: $radius;
+}
+
+@mixin flexbox($justify: flex-start, $align: stretch, $direction: row) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+@mixin button-style(
+  $bg-color: $secondary-color,
+  $text-color: $primary-color,
+  $hover-bg-color: $primary-color,
+  $hover-text-color: $secondary-color
+) {
+  background: none;
+  border: 1px solid $bg-color;
+  color: $text-color;
+  padding: 0.5rem 1rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover {
+    background-color: $hover-bg-color;
+    color: $hover-text-color;
+  }
+}
+
+@mixin max-md {
+  @media (max-width: 768px) {
+    @content;
+  }
+}
+
+@mixin max-sm {
+  @media (max-width: 576px) {
+    @content;
+  }
+}

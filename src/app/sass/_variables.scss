@@ -1,0 +1,95 @@
+$primary-gradient: var(--primary-gradient) !default;
+
+$primary: var(--primary-color) !default;
+$profile-active: var(--profile-active) !default;
+$nav-option-active: var(--nav-option-active) !default;
+$nav-option-active-border: var(--nav-option-active-border) !default;
+$light: var(--bg-color) !default;
+$shadow-color: var(--shadow-color) !default;
+$color-gray: var(--color-gray) !default;
+$gray-1: var(--text-box-color) !default;
+$gray-2: var(--text-box-stroke) !default;
+$gray-3: var(--placeholder-text) !default;
+$text-box-focus: var(--text-box-focus) !default;
+$gray-5: var(--card-header-text) !default;
+$main-content-bg: #fcfeff;
+$text-color: #374151;
+$open-color: #09a819;
+$closed-color: #c0502b;
+$text-background-color: #d9d9d9;
+$search-bg: #f0f7fc;
+
+$badge-gray: #484a04;
+$badge-green: #14ba6d;
+$badge-red: #f93427;
+
+$danger: var(--error) !default;
+
+$disabled: var(--disabled) !default;
+
+$progress-stroke: var(--progress-indicator-stroke) !default;
+
+//Typography
+$font-family-logo: var(--font-family-logo) !default;
+$font-family-base: var(--font-family-base) !default;
+
+//font-size
+$size-0: 0.5rem; // 8px
+$size-1: 0.75rem; // 12px
+$size-2: 0.85rem; // 13.6px
+$size-3: 1rem; // 16px
+$size-4: 1.15rem; // 18.4px
+$size-5: 1.25rem; // 20px
+$size-6: 1.5rem; // 24px
+$size-7: 1.75rem; // 28px
+$size-8: 2rem; // 32px
+$size-9: 2.5rem; // 40px
+$size-10: 3rem; // 48px
+
+//font-weight
+$font-weight-light: 200;
+$font-weight-lighter: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+$font-weight-extrabold: 800;
+$font-weight-black: 900;
+
+//border-radius
+$border-radius-s: 0.5rem;
+$border-radius-m: 1rem;
+$border-radius-l: 1.5rem;
+$border-radius-xl: 2rem;
+$border-radius-xxl: 2.5rem;
+$border-radius-xxxl: 3rem;
+
+// transitions
+$transition-duration: 100ms;
+$transition-duration-2: 200ms;
+$transition-duration-3: 300ms;
+
+// Padding
+$main-padding: 10rem;
+$mobile-padding: 2rem;
+
+// Colors
+// $primary-color: #2563eb;
+
+// Image Sizes
+$image-width: 300px;
+$image-height: 500px;
+
+// Other variables
+$border-radius: 0.5rem;
+
+$primary-color: #881337;
+$secondary-color: #fff;
+$hover-color: #ffcccb;
+
+$padding-large: 10rem;
+$padding-medium: 2rem;
+$padding-small: 1rem;
+
+$font-size-large: 1.2rem;
+$font-size-medium: 1rem;
